@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Trip Planner</title>
+    <title>Trip Planner MVP</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,11 +11,7 @@
     <header>
         <h1>My Trip Planner</h1>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">My Trips</a></li>
-                <li><a href="#" id="login-button">Login</a></li>
-            </ul>
+            <button id="login-btn">Login</button>
         </nav>
     </header>
 
@@ -23,84 +19,54 @@
 
         <aside class="sidebar-controls">
             
-            <section class="trip-creator">
-                <h2>Plan a New Trip</h2>
-                <form id="new-trip-form">
-                    <div class="form-group">
-                        <label for="trip-name">Trip Name:</label>
-                        <input type="text" id="trip-name" name="trip-name" placeholder="e.g., Tokyo Adventure" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="destination">Destination:</label>
-                        <input type="text" id="destination" name="destination" placeholder="City or Country" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="start-date">Start Date:</label>
-                        <input type="date" id="start-date" name="start-date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="end-date">End Date:</label>
-                        <input type="date" id="end-date" name="end-date" required>
-                    </div>
-                    <button type="submit">Start Planning</button>
-                </form>
-            </section>
+            <div id="planner-tools" class="hidden">
+                <section class="trip-creator">
+                    <h2>Plan a New Trip</h2>
+                    <form id="new-trip-form">
+                        <div class="form-group">
+                            <label for="destination">Destination:</label>
+                            <input type="text" id="destination" placeholder="e.g., Tokyo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="start-date">Start Date:</label>
+                            <input type="date" id="start-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="end-date">End Date:</label>
+                            <input type="date" id="end-date" required>
+                        </div>
+                        <button type="submit">Start Planning</button>
+                    </form>
+                </section>
 
-            <section class="poi-search">
-                <h3>Find Places</h3>
-                <form id="search-form">
-                    <input type="search" id="search-input" placeholder="Search for attractions, food...">
-                    <button type="submit">Search</button>
-                </form>
-                
-                <div id="search-results">
-                    </div>
-            </section>
+                <section class="poi-search">
+                    <h3>Find Places</h3>
+                    <form id="search-form">
+                        <input type="search" id="search-input" placeholder="Search for attractions...">
+                        <button type="submit">Search</button>
+                    </form>
+                    
+                    <div id="search-results">
+                        </div>
+                </section>
+            </div>
+            
+            <div id="login-prompt">
+                <p>Please log in to start planning your trip.</p>
+            </div>
+
         </aside>
 
         <section class="itinerary-display">
-            <h2 id="itinerary-title">Your Itinerary: (No trip selected)</h2>
-
-            <article class="itinerary-day">
-                <h3>Day 1: Arrival & Shinjuku</h3>
-                <ul id="day-1-list" class="day-list">
-                    <li>
-                        <div class="item-info">
-                            <strong>Shinjuku Gyoen National Garden</strong>
-                            <span>9:00 AM - 11:00 AM</span>
-                        </div>
-                        <button class="remove-item">Remove</button>
-                    </li>
-                    <li>
-                        <div class="item-info">
-                            <strong>Tokyo Metropolitan Govt. Building</strong>
-                            <span>12:00 PM (City View)</span>
-                        </div>
-                        <button class="remove-item">Remove</button>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="itinerary-day">
-                <h3>Day 2: Culture & History</h3>
-                <ul id="day-2-list" class="day-list">
-                    <li>
-                        <div class="item-info">
-                            <strong>Sensō-ji Temple</strong>
-                            <span>10:00 AM</span>
-                        </div>
-                        <button class="remove-item">Remove</button>
-                    </li>
-                </ul>
-            </article>
-
+            <h2 id="itinerary-title">Your Itinerary</h2>
+            
+            <div id="itinerary-days-container">
+                <p>Your itinerary is empty. Create a new trip to begin!</p>
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <p>&copy; 2025 My Trip Planner</p>
-    </footer>
-
+    <script src="app.js"></script>
 </body>
 </html>
