@@ -58,7 +58,6 @@ tripForm.addEventListener("submit", addTripHandler);
 // ====== LOAD TRIPS ======
 function loadTrips() {
   let trips = JSON.parse(localStorage.getItem("trips") || "[]");
-
   // ====== Search and Filter ======
   const searchQuery = document.getElementById("searchBox")?.value.toLowerCase() || "";
   const filterType = document.getElementById("dayFilter")?.value || "all";
@@ -71,7 +70,7 @@ function loadTrips() {
     else if (filterType === "long") matchFilter = t.days >= 8;
     return matchSearch && matchFilter;
   });
-document.getElementById("sortSelect").addEventListener("change", loadTrips);
+  document.getElementById("sortSelect").addEventListener("change", loadTrips);
 
   // ====== Sorting ======
   const sortValue = document.getElementById("sortSelect")?.value || "none";
@@ -89,7 +88,7 @@ document.getElementById("sortSelect").addEventListener("change", loadTrips);
   // ====== Render Trips ======
   tripList.innerHTML = trips.length
     ? trips.map(
-        (t, index) => `
+      (t, index) => `
         <li class="${t.visited ? "visited" : ""}">
           <strong>${t.destination}</strong> - ${t.days} days
           ${t.image ? `<br><img src="${t.image}" alt="${t.destination}">` : ""}
@@ -99,27 +98,27 @@ document.getElementById("sortSelect").addEventListener("change", loadTrips);
           <button onclick="editTrip(${index})">✏️ Edit</button>
           <button onclick="deleteTrip(${index})">🗑️ Delete</button>
         </li>`
-      ).join("")
+    ).join("")
     : "<p>No matching trips found.</p>";
 }
 
 
-  // Apply search + filter logic
-  const filteredTrips = trips.filter((t) => {
-    const matchSearch = t.destination.toLowerCase().includes(searchQuery);
+// Apply search + filter logic
+const filteredTrips = trips.filter((t) => {
+  const matchSearch = t.destination.toLowerCase().includes(searchQuery);
 
-    let matchFilter = true;
-    if (filterType === "short") matchFilter = t.days <= 3;
-    else if (filterType === "medium") matchFilter = t.days >= 4 && t.days <= 7;
-    else if (filterType === "long") matchFilter = t.days >= 8;
+  let matchFilter = true;
+  if (filterType === "short") matchFilter = t.days <= 3;
+  else if (filterType === "medium") matchFilter = t.days >= 4 && t.days <= 7;
+  else if (filterType === "long") matchFilter = t.days >= 8;
 
-    return matchSearch && matchFilter;
-  });
+  return matchSearch && matchFilter;
+});
 
-  // Render filtered trips
-  tripList.innerHTML = filteredTrips.length
-    ? filteredTrips.map(
-        (t, index) => `
+// Render filtered trips
+tripList.innerHTML = filteredTrips.length
+  ? filteredTrips.map(
+    (t, index) => `
         <li>
           <strong>${t.destination}</strong> - ${t.days} days
           ${t.image ? `<br><img src="${t.image}" alt="${t.destination}">` : ""}
@@ -127,8 +126,8 @@ document.getElementById("sortSelect").addEventListener("change", loadTrips);
           <button onclick="editTrip(${index})">✏️ Edit</button>
           <button onclick="deleteTrip(${index})">🗑️ Delete</button>
         </li>`
-      ).join("")
-    : "<p>No matching trips found.</p>";
+  ).join("")
+  : "<p>No matching trips found.</p>";
 
 
 

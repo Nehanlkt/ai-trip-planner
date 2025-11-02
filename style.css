@@ -20,7 +20,8 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-input, textarea {
+input,
+textarea {
   width: 90%;
   padding: 8px;
   margin: 8px 0;
@@ -43,7 +44,8 @@ button {
   padding: 10px;
 }
 
-#searchBox, #dayFilter {
+#searchBox,
+#dayFilter {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
@@ -51,7 +53,8 @@ button {
   width: 200px;
 }
 
-#searchBox:focus, #dayFilter:focus {
+#searchBox:focus,
+#dayFilter:focus {
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 3px #007bff;
@@ -60,6 +63,7 @@ button {
 #downloadPdfBtn {
   background-color: #28a745;
 }
+
 #downloadPdfBtn:hover {
   background-color: #218838;
 }
@@ -79,11 +83,13 @@ li button {
 }
 
 li button:nth-child(1) {
-  background-color: #ffc107; /* Edit button */
+  background-color: #ffc107;
+  /* Edit button */
 }
 
 li button:nth-child(2) {
-  background-color: #dc3545; /* Delete button */
+  background-color: #dc3545;
+  /* Delete button */
 }
 
 li button:hover {

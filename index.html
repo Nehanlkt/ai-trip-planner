@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Trip Planner</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <h1>🌍 Simple Trip Planner</h1>
 
@@ -16,7 +18,7 @@
       <input id="destination" placeholder="Enter destination" required />
       <input id="days" type="number" placeholder="Days" required />
       <label for="budget">Budget per day (₹):</label>
-<input type="number" id="budget" required />
+      <input type="number" id="budget" required />
 
       <textarea id="notes" placeholder="Notes (optional)"></textarea>
       <input id="image" type="file" accept="image/*" />
@@ -30,37 +32,37 @@
     <ul id="attractionsList"></ul>
   </section>
 
-<!-- Search & Filter Controls -->
-<section id="filter-section">
-  <h2>🔍 Search & Filter Trips</h2>
-  <input type="text" id="searchBox" placeholder="Search by destination..." />
-  
-  <select id="dayFilter">
-    <option value="all">All Trips</option>
-    <option value="short">Short (1–3 days)</option>
-    <option value="medium">Medium (4–7 days)</option>
-    <option value="long">Long (8+ days)</option>
-  </select>
-</section>
+  <!-- Search & Filter Controls -->
+  <section id="filter-section">
+    <h2>🔍 Search & Filter Trips</h2>
+    <input type="text" id="searchBox" placeholder="Search by destination..." />
 
-<!-- o -->
+    <select id="dayFilter">
+      <option value="all">All Trips</option>
+      <option value="short">Short (1–3 days)</option>
+      <option value="medium">Medium (4–7 days)</option>
+      <option value="long">Long (8+ days)</option>
+    </select>
+  </section>
+
+  <!-- o -->
   <!-- My Trips -->
   <section>
-  <h2>🧳 My Trips</h2>
-  <button id="downloadPdfBtn">📄 Download Itinerary as PDF</button>
-  <ul id="tripList"></ul>
-</section>
+    <h2>🧳 My Trips</h2>
+    <button id="downloadPdfBtn">📄 Download Itinerary as PDF</button>
+    <ul id="tripList"></ul>
+  </section>
 
-<!-- Sort & Summary -->
-<section id="sort-summary">
-  <h2>🧭 Sort & Summary</h2>
-  <select id="sortSelect">
-    <option value="none">No Sorting</option>
-    <option value="name">Sort by Destination</option>
-    <option value="days">Sort by Days</option>
-  </select>
-  <p id="tripSummary">Total trips: 0 | Total days: 0</p>
-</section>
+  <!-- Sort & Summary -->
+  <section id="sort-summary">
+    <h2>🧭 Sort & Summary</h2>
+    <select id="sortSelect">
+      <option value="none">No Sorting</option>
+      <option value="name">Sort by Destination</option>
+      <option value="days">Sort by Days</option>
+    </select>
+    <p id="tripSummary">Total trips: 0 | Total days: 0</p>
+  </section>
 
   <!-- Feedback -->
   <section>
@@ -75,4 +77,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
