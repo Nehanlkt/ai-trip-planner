@@ -1,81 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Trip Planner</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trip Planner</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1>🌍 Simple Trip Planner</h1>
 
-  <!-- Trip Planning -->
-  <section>
-    <h2>🗓️ Add a New Trip</h2>
-    <form id="tripForm">
-      <input id="destination" placeholder="Enter destination" required />
-      <input id="days" type="number" placeholder="Days" required />
-      <label for="budget">Budget per day (₹):</label>
-      <input type="number" id="budget" required />
+    <header>
+        <h1>My Trip Planner</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Trips</a></li>
+                <li><a href="#" id="login-button">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
-      <textarea id="notes" placeholder="Notes (optional)"></textarea>
-      <input id="image" type="file" accept="image/*" />
-      <button type="submit">Add Trip</button>
-    </form>
-  </section>
+    <main class="planner-container">
 
-  <!-- Top Attractions -->
-  <section>
-    <h2>🏛️ Top Attractions</h2>
-    <ul id="attractionsList"></ul>
-  </section>
+        <aside class="sidebar-controls">
+            
+            <section class="trip-creator">
+                <h2>Plan a New Trip</h2>
+                <form id="new-trip-form">
+                    <div class="form-group">
+                        <label for="trip-name">Trip Name:</label>
+                        <input type="text" id="trip-name" name="trip-name" placeholder="e.g., Tokyo Adventure" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <input type="text" id="destination" name="destination" placeholder="City or Country" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Start Date:</label>
+                        <input type="date" id="start-date" name="start-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">End Date:</label>
+                        <input type="date" id="end-date" name="end-date" required>
+                    </div>
+                    <button type="submit">Start Planning</button>
+                </form>
+            </section>
 
-  <!-- Search & Filter Controls -->
-  <section id="filter-section">
-    <h2>🔍 Search & Filter Trips</h2>
-    <input type="text" id="searchBox" placeholder="Search by destination..." />
+            <section class="poi-search">
+                <h3>Find Places</h3>
+                <form id="search-form">
+                    <input type="search" id="search-input" placeholder="Search for attractions, food...">
+                    <button type="submit">Search</button>
+                </form>
+                
+                <div id="search-results">
+                    </div>
+            </section>
+        </aside>
 
-    <select id="dayFilter">
-      <option value="all">All Trips</option>
-      <option value="short">Short (1–3 days)</option>
-      <option value="medium">Medium (4–7 days)</option>
-      <option value="long">Long (8+ days)</option>
-    </select>
-  </section>
+        <section class="itinerary-display">
+            <h2 id="itinerary-title">Your Itinerary: (No trip selected)</h2>
 
-  <!-- o -->
-  <!-- My Trips -->
-  <section>
-    <h2>🧳 My Trips</h2>
-    <button id="downloadPdfBtn">📄 Download Itinerary as PDF</button>
-    <ul id="tripList"></ul>
-  </section>
+            <article class="itinerary-day">
+                <h3>Day 1: Arrival & Shinjuku</h3>
+                <ul id="day-1-list" class="day-list">
+                    <li>
+                        <div class="item-info">
+                            <strong>Shinjuku Gyoen National Garden</strong>
+                            <span>9:00 AM - 11:00 AM</span>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </li>
+                    <li>
+                        <div class="item-info">
+                            <strong>Tokyo Metropolitan Govt. Building</strong>
+                            <span>12:00 PM (City View)</span>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </li>
+                </ul>
+            </article>
 
-  <!-- Sort & Summary -->
-  <section id="sort-summary">
-    <h2>🧭 Sort & Summary</h2>
-    <select id="sortSelect">
-      <option value="none">No Sorting</option>
-      <option value="name">Sort by Destination</option>
-      <option value="days">Sort by Days</option>
-    </select>
-    <p id="tripSummary">Total trips: 0 | Total days: 0</p>
-  </section>
+            <article class="itinerary-day">
+                <h3>Day 2: Culture & History</h3>
+                <ul id="day-2-list" class="day-list">
+                    <li>
+                        <div class="item-info">
+                            <strong>Sensō-ji Temple</strong>
+                            <span>10:00 AM</span>
+                        </div>
+                        <button class="remove-item">Remove</button>
+                    </li>
+                </ul>
+            </article>
 
-  <!-- Feedback -->
-  <section>
-    <h2>💬 Feedback</h2>
-    <form id="feedbackForm">
-      <input id="name" placeholder="Your name" required />
-      <textarea id="message" placeholder="Your feedback" required></textarea>
-      <button type="submit">Submit Feedback</button>
-    </form>
-    <div id="feedbackList"></div>
-  </section>
+        </section>
 
-  <script src="script.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Trip Planner</p>
+    </footer>
+
 </body>
-
 </html>
