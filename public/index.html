@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Trip Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌎 AI Trip Planner</h1>
+    <form id="tripForm">
+      <input type="text" id="destination" placeholder="Destination" required />
+      <input type="date" id="start_date" required />
+      <input type="number" id="num_days" placeholder="No. of Days" required />
+      <input type="number" id="budget" placeholder="Total Budget (₹)" required />
+      <select id="traveler_type">
+        <option value="solo">Solo</option>
+        <option value="couple">Couple</option>
+        <option value="family">Family</option>
+        <option value="friends">Friends</option>
+      </select>
+      <input type="text" id="interests" placeholder="Interests (comma-separated)" required />
+      <button type="submit">Generate Plan</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
